@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+// import React, { useState } from 'react';
+// import './App.css';
+
+// function App() {
+//   const [isFullScreen, setIsFullScreen] = useState(false);
+
+//   const toggleFullScreen = () => {
+//     if (!document.fullscreenElement) {
+//       document.documentElement.requestFullscreen().catch(err => {
+//         console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+//       });
+//     } else {
+//       if (document.exitFullscreen) {
+//         document.exitFullscreen();
+//       }
+//     }
+//     setIsFullScreen(!isFullScreen);
+//   };
+
+//   return (
+//     <div className="App">
+//       <div className="content">
+//       <iframe src="https://drive.google.com/file/d/1D-6-XvSdEII76LW9O1iBLh4Iz2SrWHce/preview" 
+//          style={{height:"100vh",width:"100vw"}}/>
+//       </div>
+//       <button className="floating-button" onClick={toggleFullScreen}>
+//         {isFullScreen ? '+' : '⛶'}
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import './App.css';
+import React from 'react';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 function App() {
+  const handle = useFullScreenHandle();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <button onClick={handle.enter} className='floating-button'>
+        ⛶
+      </button>
+
+      <FullScreen handle={handle}>
+        <iframe src="https://drive.google.com/file/d/1D-6-XvSdEII76LW9O1iBLh4Iz2SrWHce/preview" 
+        style={{height:"100vh",width:"100vw"}}/>
+      </FullScreen>
     </div>
   );
 }
