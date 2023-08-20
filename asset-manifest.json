@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Pirates-Private-LOVE/static/css/main.82529217.css",
+    "main.js": "/Pirates-Private-LOVE/static/js/main.928855af.js",
+    "index.html": "/Pirates-Private-LOVE/index.html",
+    "main.82529217.css.map": "/Pirates-Private-LOVE/static/css/main.82529217.css.map",
+    "main.928855af.js.map": "/Pirates-Private-LOVE/static/js/main.928855af.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82529217.css",
+    "static/js/main.928855af.js"
+  ]
+}
