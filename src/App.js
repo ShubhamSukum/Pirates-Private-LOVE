@@ -48,7 +48,7 @@ function App() {
 
       <FullScreen handle={handle}>
         <iframe src="https://drive.google.com/file/d/1D-6-XvSdEII76LW9O1iBLh4Iz2SrWHce/preview" 
-        style={{height:"100vh",width:"100vw"}}/>
+        style={{height:"100vh",width:"100vw"}} title='PDF'/>
       </FullScreen>
     </div>
   );
