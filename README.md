@@ -1,3 +1,3 @@
 # Pirate's Private LOVE
 
-## bit.ly/shubzPPL1
+## https://bit.ly/shubzPPL1
