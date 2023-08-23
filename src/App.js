@@ -13,7 +13,7 @@ function App() {
       </button>
 
       <FullScreen handle={handle}>
-        <iframe src="https://drive.google.com/file/d/1D-6-XvSdEII76LW9O1iBLh4Iz2SrWHce/preview" 
+        <iframe src="https://drive.google.com/file/d/1UmhdNlNSTZbpZ4v-Z6l4gMWL68eGZvtu/preview" 
         style={{height:"98vh",width:"99vw"}} title='PDF'/>
       </FullScreen>
     </div>
