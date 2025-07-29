@@ -1,10 +1,9 @@
 import './App.css';
-import React from 'react';
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 function App() {
   const handle = useFullScreenHandle();
-
+                                                                                            
   return (
     <div className="App">
 
@@ -14,7 +13,7 @@ function App() {
 
       <FullScreen handle={handle}>
         <iframe src="https://drive.google.com/file/d/1UmhdNlNSTZbpZ4v-Z6l4gMWL68eGZvtu/preview" 
-        style={{height:"98vh",width:"99vw"}} title='PDF'/>
+        style={{height:"99.47vh",width:"100vw"}} title='Pirate Private LOVE [ bit.ly/shubzPPL1 ]'/>
       </FullScreen>
     </div>
   );
