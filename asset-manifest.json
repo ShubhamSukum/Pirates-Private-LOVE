@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Pirates-Private-LOVE/static/css/main.82529217.css",
-    "main.js": "/Pirates-Private-LOVE/static/js/main.85a8e718.js",
+    "main.css": "/Pirates-Private-LOVE/static/css/main.03aced1c.css",
+    "main.js": "/Pirates-Private-LOVE/static/js/main.37035f02.js",
     "index.html": "/Pirates-Private-LOVE/index.html",
-    "main.82529217.css.map": "/Pirates-Private-LOVE/static/css/main.82529217.css.map",
-    "main.85a8e718.js.map": "/Pirates-Private-LOVE/static/js/main.85a8e718.js.map"
+    "main.03aced1c.css.map": "/Pirates-Private-LOVE/static/css/main.03aced1c.css.map",
+    "main.37035f02.js.map": "/Pirates-Private-LOVE/static/js/main.37035f02.js.map"
   },
   "entrypoints": [
-    "static/css/main.82529217.css",
-    "static/js/main.85a8e718.js"
+    "static/css/main.03aced1c.css",
+    "static/js/main.37035f02.js"
   ]
 }
