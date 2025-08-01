@@ -1,16 +1,15 @@
 const PrivacyPolicy = () => {
   return (
     <div className="privacy-container" style={styles.container}>
-      <h1 style={styles.title}>Privacy Policy</h1>
+      <h1 style={styles.title}>🏴‍☠️ Pirate's Private LOVE 🏴‍☠️</h1>
+      <h2 style={styles.title}>Privacy Policy</h2>
       <p style={styles.date}>Last Updated: July 30, 2025</p>
 
       <section>
         <h2 style={styles.heading}>1. About the Story</h2>
         <p style={styles.text}>
-          Welcome to <strong>Pirate's Private LOVE Story</strong>. This fictional tale follows MABH,
-          a pirate navigating uncharted waters of emotion—from heartbreak to self-love and a fated
-          encounter with RIGS. While the story dives deep into emotional themes, your real-life
-          privacy remains protected.
+          Pirate's Private LOVE is a fictional tale exploring deep emotional currents. While you're immersed
+          in MABH’s journey from heartbreak to self-discovery, your real-world privacy stays safely anchored.
         </p>
       </section>
 
