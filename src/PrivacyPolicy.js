@@ -8,20 +8,18 @@ const PrivacyPolicy = () => {
       <section>
         <h2 style={styles.heading}>1. About the Story</h2>
         <p style={styles.text}>
-          Pirate's Private LOVE is a fictional tale exploring deep emotional currents. While you're immersed
-          in MABH’s journey from heartbreak to self-discovery, your real-world privacy stays safely anchored.
+          Pirate's Private LOVE is a fictional tale about MABH, a pirate navigating emotional tides. While the journey is deep and imaginative, your privacy in the real world remains safe.
         </p>
       </section>
 
       <section>
         <h2 style={styles.heading}>2. Information We Collect</h2>
+        <ul style={styles.list}>
+          <li>Device information (browser, OS, resolution)</li>
+          <li>Anonymous usage stats (page visits, time, clicks)</li>
+          <li>Voluntary feedback or form inputs</li>
+        </ul>
         <p style={styles.text}>
-          We collect limited, non-personal information:
-          <ul style={styles.list}>
-            <li>Device information (browser, OS, resolution)</li>
-            <li>Anonymous usage stats (page visits, time, clicks)</li>
-            <li>Voluntary feedback or form inputs</li>
-          </ul>
           We don’t ask for personal info unless you choose to share it.
         </p>
       </section>
@@ -50,8 +48,7 @@ const PrivacyPolicy = () => {
       <section>
         <h2 style={styles.heading}>6. Security</h2>
         <p style={styles.text}>
-          All data is secured using modern protocols. While no system is perfect, we strive to keep your
-          information safe—just like MABH guarding his treasure.
+          All data is secured using modern protocols. While no system is perfect, we strive to keep your information safe—just like MABH guarding his treasure.
         </p>
       </section>
 

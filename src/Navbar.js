@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav style={styles.navbar}>
-      <Link to="/" style={styles.logo}>☠️ Pirate's LOVE</Link>
+      <Link to="/" style={styles.logo}>☠️ Pirate's Private LOVE</Link>
       <div>
         <Link to="/privacy" style={styles.link}>Privacy Policy</Link>
       </div>
