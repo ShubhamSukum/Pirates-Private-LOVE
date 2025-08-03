@@ -7,6 +7,9 @@
 body {
   background: #f4f4f4;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  overflow-y: hidden; 
+  overflow-x: hidden;
 }
 
 .App {

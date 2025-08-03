@@ -1,7 +1,10 @@
 const PrivacyPolicy = () => {
   return (
     <div className="privacy-container" style={styles.container}>
-      <h1 style={styles.title}>🏴‍☠️ Pirate's Private LOVE 🏴‍☠️</h1>
+      <h1 style={styles.title}>
+        <span style={styles.emoji}>🏴‍☠️</span> Pirate's Private LOVE{" "}
+        <span style={styles.emoji}>🏴‍☠️</span>
+      </h1>
       <h2 style={styles.title}>Privacy Policy</h2>
       <p style={styles.date}>Last Updated: July 30, 2025</p>
 
@@ -15,9 +18,9 @@ const PrivacyPolicy = () => {
       <section>
         <h2 style={styles.heading}>2. Information We Collect</h2>
         <ul style={styles.list}>
-          <li>Device information (browser, OS, resolution)</li>
-          <li>Anonymous usage stats (page visits, time, clicks)</li>
-          <li>Voluntary feedback or form inputs</li>
+          <li style={styles.listItem}>✅ Device information (browser, OS, resolution)</li>
+          <li style={styles.listItem}>✅ Anonymous usage stats (page visits, time, clicks)</li>
+          <li style={styles.listItem}>✅ Voluntary feedback or form inputs</li>
         </ul>
         <p style={styles.text}>
           We don’t ask for personal info unless you choose to share it.
@@ -70,16 +73,9 @@ const PrivacyPolicy = () => {
         <h2 style={styles.heading}>9. Contact Us</h2>
         <p style={styles.text}>
           Have feedback or privacy concerns? Contact us at:{" "}
-          <a href="mailto:shubhamsukum@gmail.com">shubhamsukum@gmail.com</a>
+          <a href="mailto:shubziverse@gmail.com">shubziverse@gmail.com</a>
         </p>
       </section>
-
-      <blockquote style={styles.quote}>
-        "Before you love the sea, love yourself. That’s what MABH learned, and we honor that
-        with every respectful interaction with your privacy."
-      </blockquote>
-
-      <p style={styles.footer}>— The Team Behind Pirate’s Private LOVE Story</p>
     </div>
   );
 };
@@ -97,14 +93,22 @@ const styles = {
     lineHeight: 1.6,
   },
   title: {
-    fontSize: "2rem",
+    fontSize: "1.8rem",
     fontWeight: "bold",
     marginBottom: "0.5rem",
+    textAlign: "center",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  },
+  emoji: {
+    margin: "0 0.25rem",
   },
   date: {
     color: "#666",
     fontSize: "0.9rem",
     marginBottom: "1rem",
+    textAlign: "center",
   },
   heading: {
     fontSize: "1.25rem",
@@ -115,20 +119,13 @@ const styles = {
     marginBottom: "1rem",
   },
   list: {
-    paddingLeft: "1.5rem",
+    paddingLeft: "0",
+    listStyleType: "none",
     marginTop: "0.5rem",
     marginBottom: "0.5rem",
   },
-  quote: {
-    fontStyle: "italic",
-    background: "#ffe",
-    padding: "1rem",
-    borderLeft: "4px solid #f90",
-    marginTop: "2rem",
-  },
-  footer: {
-    marginTop: "1rem",
-    fontWeight: "bold",
+  listItem: {
+    marginBottom: "0.5rem",
   },
 };
 
