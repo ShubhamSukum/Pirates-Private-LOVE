@@ -1,30 +1,45 @@
 import './App.css';
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import PrivacyPolicy from "./PrivacyPolicy";
 import Navbar from './Navbar';
+import { useEffect } from 'react';
+
+function ScrollControl({ children }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [location]);
+
+  return children;
+}
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
+      <ScrollControl>
+        <div className="App">
+          <Navbar />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                  <iframe
-                    src="https://drive.google.com/file/d/1UmhdNlNSTZbpZ4v-Z6l4gMWL68eGZvtu/preview"
-                    style={{ height: "99vh", width: "100vw", border: "none" }}
-                    title="Pirate Private LOVE [ bit.ly/shubzPPL1 ]"
-                  />
-              </>
-            }
-          />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-        </Routes>
-      </div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <iframe
+                  src="https://drive.google.com/file/d/1UmhdNlNSTZbpZ4v-Z6l4gMWL68eGZvtu/preview"
+                  style={{ height: "93vh", width: "100vw", border: "none" }}
+                  title="Pirate Private LOVE [ bit.ly/shubzPPL1 ]"
+                />
+              }
+            />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+          </Routes>
+        </div>
+      </ScrollControl>
     </Router>
   );
 }

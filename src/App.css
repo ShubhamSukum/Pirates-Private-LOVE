@@ -7,9 +7,7 @@
 body {
   background: #f4f4f4;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  overflow-y: hidden; 
-  overflow-x: hidden;
+  overflow-x: hidden; /* Allow vertical scroll unless overridden */
 }
 
 .App {
@@ -34,4 +32,10 @@ body {
 
 iframe {
   border: none;
+}
+
+/* Disable scroll on body when viewing PDF page */
+.no-scroll {
+  overflow-y: hidden;
+  height: 100vh;
 }
