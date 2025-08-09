@@ -21,14 +21,16 @@ const styles = {
     color: "#fff",
     padding: "0.75rem 1.5rem",
     fontFamily: "Georgia, serif",
-    position: "sticky",
-    top: 0,
+    position: "fixed", // fixed instead of sticky
+    bottom: 0, // now at bottom
+    left: 0,
+    width: "100%",
     zIndex: 1000,
   },
   logo: {
     textDecoration: "none",
     color: "#fff",
-    fontSize: "clamp(0.9rem, 3vw, 1.3rem)",  // ⬅️ Reduced for mobile
+    fontSize: "clamp(0.9rem, 3vw, 1.3rem)",
     marginBottom: "0.5rem",
   },
   links: {
@@ -40,7 +42,7 @@ const styles = {
     textDecoration: "none",
     color: "#f2f2f2",
     marginLeft: "1rem",
-    fontSize: "clamp(0.75rem, 2.5vw, 0.95rem)",  // ⬅️ Reduced for mobile
+    fontSize: "clamp(0.75rem, 2.5vw, 0.95rem)",
   },
 };
 

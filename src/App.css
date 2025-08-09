@@ -7,16 +7,20 @@
 body {
   background: #f4f4f4;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow-x: hidden; /* Allow vertical scroll unless overridden */
+  overflow-x: hidden;
 }
 
 .App {
   text-align: center;
 }
 
+.content {
+  padding-bottom: 60px; /* Space for bottom navbar */
+}
+
 .floating-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 70px; /* Adjusted to sit above navbar */
   right: 20px;
   width: 50px;
   height: 50px;
