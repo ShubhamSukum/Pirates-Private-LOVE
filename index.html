@@ -4,17 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Optional: Apple / Android PWA Icons -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" sizes="192x192" href="/android-chrome-192x192.png" />
     <link rel="icon" sizes="512x512" href="/android-chrome-512x512.png" />
-    
+
     <!-- SEO and App Info -->
     <meta name="theme-color" content="#ffffff" />
-    <meta name="description" content="Pirate's Private LOVE — A Vite React App" />
+    <meta name="description" content="Pirate's Private LOVE" />
     <title>Pirate's Private LOVE</title>
+
+    <!-- ✅ Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-96PQNX1NNN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-96PQNX1NNN');
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
