@@ -10,10 +10,11 @@
   height: 100vh;
   width: 100vw;
   background: black;
-  overflow: hidden; /* no scrollbars around iframe */
+  overflow: hidden;
 }
 
-/* Slim top bar */
+/* ================= NAVBAR (UNCHANGED) ================= */
+
 .ppl-buttons {
   position: fixed;
   top: 12px;
@@ -29,7 +30,6 @@
   z-index: 10;
 }
 
-/* Buttons inside navbar */
 .ppl-buttons button {
   padding: 8px 18px;
   border: none;
@@ -45,7 +45,6 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Hover */
 .ppl-buttons button:hover {
   background: rgba(0, 198, 255, 0.25);
   color: #00c6ff;
@@ -54,7 +53,6 @@
   border-color: rgba(0, 198, 255, 0.4);
 }
 
-/* Active (selected) */
 .ppl-buttons button.active {
   background: linear-gradient(135deg, #0072ff, #00c6ff);
   color: white;
@@ -63,151 +61,168 @@
   transform: translateY(-1px);
 }
 
-/* Back Home button special styling */
-.ppl-buttons button.back-home {
-  background: rgba(238, 225, 225, 0.908);
-  color: #000000;
-}
-.ppl-buttons button.back-home:hover {
-  background: linear-gradient(135deg, #ff4d4d, #ff6b6b);
-  color: white;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-}
+/* ================= PDF ================= */
 
-/* PDF fullscreen under navbar */
-.pdf-iframe {
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  border: none;
-  overflow: hidden;
-}
-
-/* Loading spinner */
-.loading-spinner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: #e0e0e0;
-}
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 3px solid rgba(0, 198, 255, 0.3);
-  border-top: 3px solid #00c6ff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.loading-spinner p {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* Authentication required */
-.auth-required {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: #e0e0e0;
-  text-align: center;
-  padding: 40px;
-}
-
-.auth-required h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #ff6b6b;
-}
-
-.auth-required p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  opacity: 0.8;
-}
-
-.login-btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #0072ff, #00c6ff);
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
-}
-
-.login-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 198, 255, 0.4);
-}
-
-/* PDF container */
 .pdf-container {
   flex: 1;
   width: 100%;
   height: 100%;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===================================================== */
+/* ================= PRIVACY POLICY ONLY ================ */
+/* ===================================================== */
+
+.privacy-page-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-top: 90px; /* space for navbar */
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-/* PDF notice for missing file */
-.pdf-notice {
+/* Main content wrapper */
+.privacy-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
+  align-items: center;
+
+  height: 65%;
+  width: 50%;
+
+  padding: 20px 24px 60px;
   color: #e0e0e0;
-  padding: 40px;
-  background: rgba(20, 20, 20, 0.8);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 198, 255, 0.2);
+
+  border: 5px solid white;
+
+  overflow-y: auto;   /* ✅ vertical scroll */
+  overflow-x: hidden; /* ❌ no horizontal scroll */
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE / Edge (legacy) */
+  -ms-overflow-style: none;
 }
 
-.pdf-notice h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
+/* Chrome / Edge / Safari */
+.privacy-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Title */
+.privacy-content h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
   color: #00c6ff;
+  letter-spacing: 0.3px;
 }
 
-.pdf-notice p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  opacity: 0.8;
-  max-width: 500px;
-  line-height: 1.6;
+/* Last updated text */
+.intro-text {
+  font-size: 14px;
+  opacity: 0.65;
+  margin-bottom: 32px;
 }
 
-.switch-to-drive-btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #0072ff, #00c6ff);
-  color: white;
+/* Section headers */
+.privacy-content h2 {
+  font-size: 22px;
+  margin-top: 34px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+/* Sub headers */
+.privacy-content h3 {
+  font-size: 17px;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  color: #dcdcdc;
+}
+
+/* Paragraph text */
+.privacy-content p {
   font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
+  line-height: 1.75;
+  opacity: 0.85;
+  margin-bottom: 12px;
 }
 
-.switch-to-drive-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 198, 255, 0.4);
+/* Lists */
+.privacy-content ul {
+  margin: 10px 0 20px;
+  padding-left: 22px;
+}
+
+.privacy-content li {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+/* Footer */
+.footer-text {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.55;
+}
+/* ================= MOBILE ADJUSTMENTS ================= */
+
+@media (max-width: 768px) {
+
+  /* Navbar already hidden – remove its reserved space */
+  .privacy-page-container {
+    padding-top: 20px;
+  }
+
+  /* Make policy card mobile-friendly */
+  .privacy-content {
+    width: 92%;          /* nearly full width */
+    height: auto;        /* let content decide */
+    max-height: 85vh;    /* still keep inside screen */
+
+    padding: 16px 14px 40px;
+    border-width: 3px;   /* lighter border on mobile */
+  }
+
+  /* Typography tuning */
+  .privacy-content h1 {
+    font-size: 24px;
+  }
+
+  .privacy-content h2 {
+    font-size: 18px;
+  }
+
+  .privacy-content h3 {
+    font-size: 15px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .footer-text {
+    font-size: 12px;
+  }
+}
+
+/* Hide top buttons on mobile (unchanged, keep this) */
+@media (max-width: 768px) {
+  .ppl-buttons {
+    display: none !important;
+  }
 }
