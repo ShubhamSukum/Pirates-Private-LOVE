@@ -1,15 +1,26 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import ReactGA from "react-ga4";
 import "./App.css";
 
 function App() {
-  const [viewMode, setViewMode] = useState("story"); // "story" | "privacy"
   const onlineLink = import.meta.env.VITE_GOOGLE_DRIVE_PPL;
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     ReactGA.initialize("G-96PQNX1NNN");
-    ReactGA.send("pageview");
   }, []);
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname,
+    });
+  }, [location]);
+
+  const isStory = location.pathname === "/";
+  const isPrivacy = location.pathname === "/privacy";
 
   return (
     <div className="ppl-container">
@@ -17,15 +28,15 @@ function App() {
       {/* Floating Navigation Buttons */}
       <div className="ppl-buttons privacy-buttons">
         <button
-          className={viewMode === "story" ? "active" : ""}
-          onClick={() => setViewMode("story")}
+          className={isStory ? "active" : ""}
+          onClick={() => navigate("/")}
         >
           Story
         </button>
 
         <button
-          className={viewMode === "privacy" ? "active" : ""}
-          onClick={() => setViewMode("privacy")}
+          className={isPrivacy ? "active" : ""}
+          onClick={() => navigate("/privacy")}
         >
           Privacy Policy
         </button>
@@ -33,66 +44,79 @@ function App() {
 
       {/* Content Area */}
       <div className="pdf-container">
-        {viewMode === "story" && (
-          <iframe
-            src={onlineLink}
-            className="pdf-iframe"
-            title="Pirate’s Private LOVE"
-            sandbox="allow-same-origin allow-scripts allow-forms"
-            allow="fullscreen"
+        <Routes>
+
+          {/* STORY ROUTE */}
+          <Route
+            path="/"
+            element={
+              <iframe
+                src={onlineLink}
+                className="pdf-iframe"
+                title="Pirate’s Private LOVE"
+                sandbox="allow-same-origin allow-scripts allow-forms"
+                allow="fullscreen"
+              />
+            }
           />
-        )}
 
-        {viewMode === "privacy" && (
-          <div className="privacy-page-container">
-            <div className="privacy-content">
+          {/* PRIVACY POLICY ROUTE */}
+          <Route
+            path="/privacy"
+            element={
+              <div className="privacy-page-container">
+                <div className="privacy-content">
 
-              <h1>Privacy Policy for Pirate’s Private LOVE</h1>
+                  <h1>Privacy Policy for Pirate’s Private LOVE</h1>
 
-              <p className="intro-text">
-                <strong>Last Updated:</strong> January 2025
-              </p>
+                  <p className="intro-text">
+                    <strong>Last Updated:</strong> January 2025
+                  </p>
 
-              <h2>1. Information We Collect</h2>
+                  <h2>1. Information We Collect</h2>
 
-              <h3>1.1 Personal Information</h3>
-              <p>
-                Pirate’s Private Love (“PPL”) does not collect personal information such as your
-                name, email, phone number, contacts, or stored files.
-              </p>
+                  <h3>1.1 Personal Information</h3>
+                  <p>
+                    Pirate’s Private Love (“PPL”) does not collect personal
+                    information such as your name, email, phone number,
+                    contacts, or stored files.
+                  </p>
 
-              <h3>1.2 Automatically Collected Information</h3>
-              <ul>
-                <li>Device & OS info</li>
-                <li>Browser details</li>
-                <li>Usage analytics</li>
-                <li>Crash logs</li>
-              </ul>
+                  <h3>1.2 Automatically Collected Information</h3>
+                  <ul>
+                    <li>Device & OS info</li>
+                    <li>Browser details</li>
+                    <li>Usage analytics</li>
+                    <li>Crash logs</li>
+                  </ul>
 
-              <h2>2. Third-Party Services</h2>
-              <p>Google Analytics (GA4), Google Drive Viewer</p>
+                  <h2>2. Third-Party Services</h2>
+                  <p>Google Analytics (GA4), Google Drive Viewer</p>
 
-              <h2>3. How We Use Information</h2>
-              <ul>
-                <li>Improve app performance</li>
-                <li>Fix bugs</li>
-                <li>Enhance user experience</li>
-                <li>Ensure stability and security</li>
-              </ul>
+                  <h2>3. How We Use Information</h2>
+                  <ul>
+                    <li>Improve app performance</li>
+                    <li>Fix bugs</li>
+                    <li>Enhance user experience</li>
+                    <li>Ensure stability and security</li>
+                  </ul>
 
-              <h2>4. Contact Us</h2>
-              <p>
-                Email: shubziverse@gmail.com <br />
-                Website: bit.ly/shubzPPL1
-              </p>
+                  <h2>4. Contact Us</h2>
+                  <p>
+                    Email: shubziverse@gmail.com <br />
+                    Website: bit.ly/shubzPPL1
+                  </p>
 
-              <p className="footer-text">
-                © {new Date().getFullYear()} Pirate’s Private LOVE.
-              </p>
+                  <p className="footer-text">
+                    © {new Date().getFullYear()} Pirate’s Private LOVE.
+                  </p>
 
-            </div>
-          </div>
-        )}
+                </div>
+              </div>
+            }
+          />
+
+        </Routes>
       </div>
     </div>
   );
