@@ -17,6 +17,15 @@ function App() {
       hitType: "pageview",
       page: location.pathname,
     });
+
+    // 🔥 Route-based body class for mobile navbar behavior
+    document.body.classList.remove("mobile-story", "mobile-privacy");
+
+    if (location.pathname === "/") {
+      document.body.classList.add("mobile-story");
+    } else if (location.pathname === "/privacy") {
+      document.body.classList.add("mobile-privacy");
+    }
   }, [location]);
 
   const isStory = location.pathname === "/";
@@ -24,9 +33,8 @@ function App() {
 
   return (
     <div className="ppl-container">
-
-      {/* Floating Navigation Buttons */}
-      <div className="ppl-buttons privacy-buttons">
+      {/* NAVBAR */}
+      <div className="ppl-buttons">
         <button
           className={isStory ? "active" : ""}
           onClick={() => navigate("/")}
@@ -42,11 +50,10 @@ function App() {
         </button>
       </div>
 
-      {/* Content Area */}
+      {/* CONTENT */}
       <div className="pdf-container">
         <Routes>
-
-          {/* STORY ROUTE */}
+          {/* STORY */}
           <Route
             path="/"
             element={
@@ -60,13 +67,12 @@ function App() {
             }
           />
 
-          {/* PRIVACY POLICY ROUTE */}
+          {/* PRIVACY */}
           <Route
             path="/privacy"
             element={
               <div className="privacy-page-container">
                 <div className="privacy-content">
-
                   <h1>Privacy Policy for Pirate’s Private LOVE</h1>
 
                   <p className="intro-text">
@@ -110,12 +116,10 @@ function App() {
                   <p className="footer-text">
                     © {new Date().getFullYear()} Pirate’s Private LOVE.
                   </p>
-
                 </div>
               </div>
             }
           />
-
         </Routes>
       </div>
     </div>
